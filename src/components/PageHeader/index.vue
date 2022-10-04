@@ -39,8 +39,8 @@ export default {
   }
 
   input {
-    width: 30vw;
-    height: 3vh;
+    width: 22vw;
+    height: 5vh;
     background-color: #818de0;
     border-radius: 0.4em;
     color: #97e3fe;
