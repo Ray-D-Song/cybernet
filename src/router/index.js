@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Card from '../components/Card/index.vue';
+import VideoPlayer from '../components/VideoPlayer/index.vue';
 
 Vue.use(VueRouter);
 

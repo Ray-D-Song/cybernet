@@ -1,6 +1,7 @@
+<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <template>
   <div class="page">
-    <div class="tag">
+    <div class="tag" @click="goHome">
     <img src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210041000177.png" alt="首页" class="home">
       <span>首页</span>
     </div>
@@ -21,6 +22,14 @@ export default {
   data() {
     return {
     };
+  },
+  methods: {
+    goHome() {
+      this.$router.push('/home');
+    },
+    goPlayer() {
+      this.$router.push('/player');
+    },
   },
 };
 </script>
