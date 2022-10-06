@@ -2,7 +2,7 @@
 <template>
   <div class="page">
     <img class="logo" src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210022058148.png" alt="logo"/>
-    <input placeholder="输入番名" @input="search" list="animeList" v-model="keywords"/>
+    <input placeholder="输入番名" @input="search" list="animeList" v-model="keyword"/>
     <datalist id="animeList">
       <option v-for="res in result">{{res}}</option>
     </datalist>
@@ -10,18 +10,23 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   data() {
     return {
-      keywords: '',
+      keyword: '',
       result: [],
     };
   },
   methods: {
     search() {
-
+      axios.get(`http://127.0.0.1:7070/search?${this.keyword}`).then((response) => {
+        this.result = Array(response.data);
+        console.log(this.result);
+      }).catch((error) => {
+        console.log(error);
+      });
     },
   },
 };
