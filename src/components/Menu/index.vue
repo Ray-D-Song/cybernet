@@ -1,16 +1,17 @@
+<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <template>
   <div class="page">
-    <div class="tag">
-    <img src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210022144673.png" alt="首页" class="home">
+    <div class="tag" @click="goHome">
+    <img src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210041000177.png" alt="首页" class="home">
       <span>首页</span>
     </div>
-    <hr/>
+    <!-- <hr/> -->
     <div class="tag">
-    <img src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210022155411.png" alt="首页" class="home">
+    <img src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210041002820.png" alt="首页" class="home">
       <span>番剧</span>
     </div>
     <div class="tag">
-    <img src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210022157531.png" alt="首页" class="home">
+    <img src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210041003069.png" alt="首页" class="home">
       <span>剧场版</span>
     </div>
   </div>
@@ -22,6 +23,14 @@ export default {
     return {
     };
   },
+  methods: {
+    goHome() {
+      this.$router.push('/home');
+    },
+    goPlayer() {
+      this.$router.push('/player');
+    },
+  },
 };
 </script>
 
@@ -29,13 +38,14 @@ export default {
 .page {
   width: 18%;
   height: 100vh;
-  background-color: #2843ad;
+  background-color: #161F68;
   margin: 1em 2em 0em 0em;
-  border-radius: 0em 0.7em 0em 0em;
-  border: #9a53d0 1px solid;
+  // border: #9a53d0 1px solid;
   color: #97e3fe;
-  padding: 3em 0em 0em 0em;
+  // padding: 3em 0em 0em 0em;
   text-shadow: #9a53d0 0.1em 0.1em 0.2em;
+  display: flex;
+  flex-direction: column;
 }
 
 .home {
@@ -47,11 +57,11 @@ export default {
   align-items: center;
 }
 
-img {
-  margin: 1em;
+.tag:hover {
+  background-color: #1E2B8F;
 }
 
-span {
-
+img {
+  margin: 1em;
 }
 </style>
