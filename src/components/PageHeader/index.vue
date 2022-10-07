@@ -4,7 +4,7 @@
     <img class="logo" src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210022058148.png" alt="logo"/>
     <input placeholder="输入番名" @input="search" list="animeList" v-model="keyword"/>
     <datalist id="animeList">
-      <option v-for="res in result">{{res}}</option>
+      <option v-for="res in result" @click="linkJump">{{res.name}}</option>
     </datalist>
   </div>
 </template>
@@ -21,12 +21,18 @@ export default {
   },
   methods: {
     search() {
-      axios.get(`http://127.0.0.1:7070/search?${this.keyword}`).then((response) => {
-        this.result = Array(response.data);
-        console.log(this.result);
-      }).catch((error) => {
-        console.log(error);
-      });
+      if (this.keyword === '') console.log('no keyword');
+      else {
+        axios.get(`http://127.0.0.1:7070/search?keyword=${this.keyword}`).then((response) => {
+          this.result = response.data;
+          console.log(this.result);
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
+    },
+    linkJump() {
+
     },
   },
 };
@@ -62,4 +68,5 @@ export default {
     text-shadow: #9a53d0 0.2em 0.2em 0.3em;
     font-size: 100%;
   }
+
 </style>

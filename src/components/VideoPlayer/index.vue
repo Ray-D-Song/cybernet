@@ -3,7 +3,7 @@
 <template>
 <div class="page">
     <video controls>
-        <source src="https://pic-base-1307984077.cos.ap-nanjing.myqcloud.com/202210041420930.mp4" type="video/mp4"/>
+        <source src="video/a00501.mp4" type="video/mp4"/>
     </video>
     <div class="episode">
         <span>选集</span>

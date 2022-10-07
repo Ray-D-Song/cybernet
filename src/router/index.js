@@ -1,13 +1,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Card from '../components/Card/index.vue';
-import VideoPlayer from '../components/VideoPlayer/index.vue';
+import AnimeView from '../Views/AnimeView/index.vue';
+import HomeView from '../Views/HomeView/index.vue';
+import MoiveView from '../Views/MovieView/index.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/home', component: Card },
-  { path: '/player', component: VideoPlayer },
+  { path: '/home', component: HomeView },
+  { path: '/movie', component: MoiveView },
+  { path: '/anime', component: AnimeView },
 ];
 
 const router = new VueRouter({
